@@ -1,0 +1,42 @@
+
+/* Navbar color */
+.bg-light{
+    min-height: 4rem;
+    background-color: #563d7c;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 5%), inset 0 -1px 0 rgb(0 0 0 / 10%);
+}
+
+/* unvisited link */
+a:link {
+    color:#6610f2;
+    text-decoration: none;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: #6f42c1;
+    text-decoration: none;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: #6f42c1;
+    text-decoration: none;
+  }
+  
+  /* selected link */
+  a:active {
+    color: blue;
+    text-decoration: none;
+  }
+  .display-1 {
+    font-weight: 500 !important;
+    font-size: 1.625rem !important;
+
+}
+/* Delete Button */
+.btn-danger {
+    color: white !important;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
