@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
     // include the config file 
     require "../config.php";
     require "common.php";
@@ -40,7 +42,7 @@
         $connection = new PDO($dsn, $username, $password, $options);
 		
         // SECOND: Create the SQL 
-        $sql = "SELECT * FROM assignmenttracker";
+        $sql = "SELECT * FROM assignmenttracker WHERE userid = {$_SESSION["id"]}";
         
         // THIRD: Prepare the SQL
         $statement = $connection->prepare($sql);
@@ -59,7 +61,9 @@
 
 <h2>Delete an assignment</h2>
 
-<?php if ($success) echo $success; ?>
+<?php if (isset($success)){
+        echo $success;
+}?>
 
 <!-- This is a loop, which will loop through each result in the array -->
 <?php foreach($result as $row) { ?>
@@ -77,3 +81,4 @@
 </p>
 <?php }; //close the foreach
 ?>
+<?php include "templates/footer.php"; ?>

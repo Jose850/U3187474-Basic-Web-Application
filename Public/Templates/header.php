@@ -12,19 +12,17 @@
 
 <body> 
     <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <img src="Asset 1.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-  </a>
-  <a class="navbar-brand"> <h1 class="display-1"><a href="index.php">Assignment Due Date Tracker</a></h1></a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <a class="navbar-brand" href="index.php">Assignment Due Date Tracker</a>
   <form class="form-inline">
         <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="newassignment.php">Add a new assignment name</a></li>
+        <li class="nav-item"><a class="nav-link" href="newassignment.php">Add a new assignment</a></li>
         <li class="nav-item"><a class="nav-link" href="read.php">Find an assignment</a></li>
         <li class="nav-item"><a class="nav-link" href="updateassignment.php">Update an assignment</a></li>
         <li class="nav-item"><a class="nav-link" href="delete.php">Delete an assignment</a></li>
-        <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+        <li class="nav-item"><a class="nav-link" href="reset-password.php">Reset Your Password</a></li>
+        <a class="nav-item"><a class="nav-link" href="logout.php"onClick ="return confirm('Are you sure you want to logout');" href='logout.php?id= <?php echo $row['id']; ?>'>Logout</a>
     </ul>
   </div>
   </form>
     </header>
-
