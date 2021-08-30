@@ -8,16 +8,27 @@ require "../config.php";
 try {
 // FIRST: Connect to the database
 $connection = new PDO($dsn, $username, $password, $options);
+
+$userid = $_SESSION['id'];
+$assignmentname  = $_POST['assignmentname'];
+$classname = $_POST['classname'];
+$duedate = $_POST['duedate'];
+$assignmentpercentage = $_POST['assignmentpercentage'];
+
 // SECOND: Get the contents of the form and store it in an array
 $new_work = array(
     "assignmentname" => $_POST['assignmentname'],
     "classname" => $_POST['classname'],
     "duedate" => $_POST['duedate'],
     "assignmentpercentage" => $_POST['assignmentpercentage'],
-    "user id" => $_SESSION["id"]
+    "userid" => $_SESSION["id"]
 );
 // THIRD: Turn the array into a SQL statement
-$sql = "INSERT INTO assignmenttracker (assignmentname, classname, duedate, assignmentpercentage, userid) VALUES (:assignmentname, :classname, :duedate, :assignmentpercentage, :userid)";
+$sql = "
+    INSERT 
+    INTO assignmenttracker (assignmentname, classname, duedate, assignmentpercentage, userid) 
+    VALUES (:assignmentname, :classname, :duedate, :assignmentpercentage, :userid)
+    ";
 // FOURTH: Now write the SQL to the database
 $statement = $connection->prepare($sql);
 $statement->execute($new_work);

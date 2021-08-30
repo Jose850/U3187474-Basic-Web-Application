@@ -101,10 +101,10 @@
     <label for="duedate'">Due Date:</label>
     <input type="text" name="duedate" id="duedate" value="<?php echo escape($work['duedate']); ?>">
     
-    <label for="assignmentpercentage">Work Date</label>
+    <label for="assignmentpercentage">Assignment Percentage</label>
     <input type="text" name="assignmentpercentage" id="assignmentpercentage" value="<?php echo escape($work['assignmentpercentage']); ?>">
 
-    <input type="submit" name="submit" value="Save">
+    <input class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit" value="Save">
 
 </form>
 
