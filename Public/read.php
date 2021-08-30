@@ -64,11 +64,10 @@ session_start();
 
         <!-- This is a loop, which will loop through each result in the array -->
         <?php foreach($result as $row) { ?>
-    
-    ID:
-    <?php echo $row["id"]; ?><br> Assignment Name:
+
+    <br> Assignment Name:
     <?php echo $row['assignmentname']; ?><br> Class Name:
-    <?php echo $row['classname']; ?><br> Due Date;
+    <?php echo $row['classname']; ?><br> Due Date:
     <?php echo $row['duedate']; ?><br> Assignment Percentage:
     <?php echo $row['assignmentpercentage']; ?><br>
 </p>

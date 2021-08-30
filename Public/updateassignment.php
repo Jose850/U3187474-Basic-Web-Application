@@ -36,15 +36,13 @@
 <?php foreach($result as $row) { ?>
 
 <p>
-    ID:
-    <?php echo $row['id']; ?><br> Assignment Name:
+    <br> Assignment Name:
     <?php echo $row['assignmentname']; ?><br> Class Name:
     <?php echo $row['classname']; ?><br> Due Date:
     <?php echo $row['duedate']; ?><br> Assignment Percentage:
     <?php echo $row['assignmentpercentage']; ?><br>
-    <a class="btn btn-outline-success my-2 my-sm-0"href='update-work.php?id=<?php echo $row['id']; ?>'>Edit</a>
+    <a class="btn btn-success"href='update-work.php?id=<?php echo $row['id']; ?>'>Edit</a>
 </p>
-
 <hr>
 <?php }; //close the foreach
 ?>

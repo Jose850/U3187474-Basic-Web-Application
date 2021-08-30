@@ -69,8 +69,7 @@ session_start();
 <?php foreach($result as $row) { ?>
 
 <p>
-    ID:
-    <?php echo escape($row['id']); ?><br> Assignment Name:
+    <br> Assignment Name:
     <?php echo $row['assignmentname']; ?><br> Class Name:
     <?php echo $row['classname']; ?><br> Due Date:
     <?php echo $row['duedate']; ?><br> Assignment Percentage:

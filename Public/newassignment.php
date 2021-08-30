@@ -54,11 +54,7 @@ echo $sql . "<br>" . $error->getMessage();
     <label for="duedate">Due Date</label>
     <input class="form-control mr-sm-2" type="text" name="duedate" id="duedate" placeholder="Due Date">
     <label for="form-control mr-sm-2" for="assignmentpercentage">Assignment Percentage</label>
-    <input class="form-control mr-sm-2"type="text" name="assignmentpercentage" id="assignmentpercentage"placeholder="Assignment Percentage">
-<form action="upload_file.php" method="post"
-enctype="multipart/form-data">
-<label for="file">Filename:</label>
-<input type="file" name="file" id="file" />  
+    <input class="form-control mr-sm-2"type="text" name="assignmentpercentage" id="assignmentpercentage"placeholder="Assignment Percentage"> 
     <input class="btn btn-outline-success my-2 my-sm-0"type="submit" name="submit" value="Submit">
 </form>
 <?php include "templates/footer.php"; ?>

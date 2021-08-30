@@ -16,7 +16,7 @@
               "assignmentname" => $_POST['assignmentname'],
               "classname"  => $_POST['classname'],
               "duedate"   => $_POST['duedate'],
-              "assignmentpercentage"   => $_POST['assignmentpercentage'],
+              "assignmentpercentage"   => $_POST['assignmentpercentage']
             ];
 
             // create SQL statement
@@ -25,8 +25,7 @@
                         assignmentname = :assignmentname, 
                         classname = :classname, 
                         duedate = :duedate, 
-                        assignmentpercentage = :assignmentpercentage, 
-                        date = :date 
+                        assignmentpercentage = :assignmentpercentage 
                     WHERE id = :id";
 
             //prepare sql statement
@@ -89,11 +88,11 @@
 
 <form method="post">
     
-    <label for="id">ID</label>
-    <input type="text" name="id" id="id" value="<?php echo escape($work['id']); ?>" >
+    <!-- <label for="id">ID</label> -->
+    <input readonly type="hidden" name="id" id="id" value="<?php echo escape($work['id']); ?>" >
     
-    <label for="assignmentname'">Assignment Name:</label>
-    <input type="text" name="assignmentname'" id="assignmentname'" value="<?php echo escape($work['assignmentname']); ?>">
+    <label for="assignmentname">Assignment Name:</label>
+    <input type="text" name="assignmentname" id="assignmentname" value="<?php echo escape($work['assignmentname']); ?>">
 
     <label for="classname">Class Name:</label>
     <input type="text" name="classname" id="classname" value="<?php echo escape($work['classname']); ?>">
