@@ -12,17 +12,15 @@
 
 <body> 
     <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-    <a class="navbar-brand" href="index.php">Assignment Due Date Tracker</a>
-  <form class="form-inline">
-        <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="newassignment.php">Add a new assignment</a></li>
-        <li class="nav-item"><a class="nav-link" href="read.php">Find an assignment</a></li>
-        <li class="nav-item"><a class="nav-link" href="updateassignment.php">Update an assignment</a></li>
-        <li class="nav-item"><a class="nav-link" href="delete.php">Delete an assignment</a></li>
-        <li class="nav-item"><a class="nav-link" href="reset-password.php">Reset Your Password</a></li>
-        <a class="nav-item"><a class="nav-link" href="logout.php"onClick ="return confirm('Are you sure you want to logout');" href='logout.php?id= <?php echo $row['id']; ?>'>Logout</a>
-    </ul>
+  <div class="topnav">
+  <a class="navbar-brand" href="index.php">Assignment Due Date Tracker</a>
+  <a class="nav-link" href="newassignment.php">Add a new assignment</a></li>
+  <a class="nav-link" href="read.php">Find an assignment</a></li>
+  <a class="nav-link" href="updateassignment.php">Update an assignment</a></li>
+  <a class="nav-link" href="delete.php">Delete an assignment</a>
+  <div class="topnav-right">
+    <a class="nav-link" href="reset-password.php">Reset Your Password</a>
+    <a class="nav-item" href="logout.php"onClick ="return confirm('Are you sure you want to logout?');" href='logout.php?id= <?php echo $row['id']; ?>'>Logout</a></a>
   </div>
-  </form>
-    </header>
+</div>
+

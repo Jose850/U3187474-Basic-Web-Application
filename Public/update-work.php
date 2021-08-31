@@ -90,22 +90,30 @@
     
     <!-- <label for="id">ID</label> -->
     <input readonly type="hidden" name="id" id="id" value="<?php echo escape($work['id']); ?>" >
+    <div class="row">
+    <div class="col">
     
     <label for="assignmentname">Assignment Name:</label>
-    <input type="text" name="assignmentname" id="assignmentname" value="<?php echo escape($work['assignmentname']); ?>">
+    <input class="form-control mr-sm-2" type="text" name="assignmentname" id="assignmentname" value="<?php echo escape($work['assignmentname']); ?>">
+    </div>
+    <div class="col">
 
     <label for="classname">Class Name:</label>
-    <input type="text" name="classname" id="classname" value="<?php echo escape($work['classname']); ?>">
-
+    <input class="form-control mr-sm-2" type="text" name="classname" id="classname" value="<?php echo escape($work['classname']); ?>">
+</div>
+    <div class="row">
+    <div class="col">
     <label for="duedate'">Due Date:</label>
-    <input type="text" name="duedate" id="duedate" value="<?php echo escape($work['duedate']); ?>">
-    
+    <input class="form-control mr-sm-2"type="text" name="duedate" id="duedate" value="<?php echo escape($work['duedate']); ?>">
+</div>
+    <div class="col">
     <label for="assignmentpercentage">Assignment Percentage</label>
-    <input type="text" name="assignmentpercentage" id="assignmentpercentage" value="<?php echo escape($work['assignmentpercentage']); ?>">
+    <input class="form-control mr-sm-2" type="text" name="assignmentpercentage" id="assignmentpercentage" value="<?php echo escape($work['assignmentpercentage']); ?>">
+</div>
+</div>
+</div>
 
     <input class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit" value="Save">
-
-</form>
 
 
 <?php include "templates/footer.php"; ?>

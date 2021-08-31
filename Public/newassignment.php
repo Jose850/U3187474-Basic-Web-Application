@@ -46,7 +46,9 @@ echo $sql . "<br>" . $error->getMessage();
  } ?>
 
 <!--form to collect data for each artwork-->
-<form class="form-inline" method="post">
+    <form class="form-inline" method="post">
+    <div class="row">
+    <div class="col">
     <label for="assignmentname">Assignment Name</label>
     <input class="form-control mr-sm-2" type="text" name="assignmentname" id="assignmentname" placeholder="Assignment Name">
     <label for="classname">Class Name</label>

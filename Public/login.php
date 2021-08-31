@@ -101,7 +101,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
     <div class="wrapper">
-        <h2>Login</h2>
+    <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h2 class= "mb-3 font-weight-normal">Login</h2>
         <p>Please fill in your credentials to login.</p>
 
         <?php 
@@ -110,7 +111,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }        
         ?>
 
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form class =form-signin action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
                 <label>Username</label>
                 <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
@@ -121,8 +122,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>
+            <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
+                <input class="btn btn-lg btn-primary btn-block" type="submit" class="btn btn-primary" value="Login">
             </div>
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
         </form>
