@@ -4,6 +4,11 @@
 	
     // include the config file that we created before
     require "../config.php"; 
+    if(!isset($_SESSION['user'])) // The exact conditional depends on your login-system implementation
+{
+    header('Location: login.php'); // Instructs the visitor's browser to redirect
+    exit; // <-- What you want. Prevents further code from being executed, works as a security measure.
+}
     
     // this is called a try/catch statement 
 	try {
@@ -36,14 +41,19 @@
 <?php foreach($result as $row) { ?>
 
 <p>
-    <br> Assignment Name:
-    <?php echo $row['assignmentname']; ?><br> Class Name:
-    <?php echo $row['classname']; ?><br> Due Date:
-    <?php echo $row['duedate']; ?><br> Assignment Percentage:
-    <?php echo $row['assignmentpercentage']; ?><br>
-    <a class="btn btn-success"href='update-work.php?id=<?php echo $row['id']; ?>'>Edit</a>
-</p>
-<hr>
+    <div class="row">
+        <div class="col">
+            Assignment Name:
+            <?php echo $row['assignmentname']; ?><br> Class Name:
+            <?php echo $row['classname']; ?><br> Due Date:
+            <?php echo $row['duedate']; ?><br> Assignment Percentage:
+            <?php echo $row['assignmentpercentage']; ?><br>
+            <form class="submit">
+                <a class="btn btn-outline-success my-2 my-sm-0"href='update-work.php?id=<?php echo $row['id']; ?>'>Edit</a>
+            </form>
+        </p>
+    </div>
+</div>
 <?php }; //close the foreach
 ?>
 

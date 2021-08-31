@@ -101,7 +101,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
     <div class="wrapper">
-    <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
         <h2 class= "mb-3 font-weight-normal">Login</h2>
         <p>Please fill in your credentials to login.</p>
 
@@ -131,6 +130,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input class="btn btn-lg btn-primary btn-block" type="submit" class="btn btn-primary" value="Login">
             </div>
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+            <p>Want to reset your password? <a href="reset-password.php">Password reset here</a>.</p>
         </form>
     </div>
 </body>

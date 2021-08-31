@@ -1,8 +1,17 @@
 <?php
+
 // Initialize the session
 session_start();
 
+if(!isset($_SESSION['user'])) // The exact conditional depends on your login-system implementation
+{
+    header('Location: login.php'); // Instructs the visitor's browser to redirect
+    exit; // <-- What you want. Prevents further code from being executed, works as a security measure.
+}
+
 require_once "../config.php";
+
+
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 /* if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){

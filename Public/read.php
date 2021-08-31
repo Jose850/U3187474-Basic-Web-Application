@@ -1,6 +1,11 @@
 <?php 
 
 session_start();
+if(!isset($_SESSION['user'])) // The exact conditional depends on your login-system implementation
+{
+    header('Location: login.php'); // Instructs the visitor's browser to redirect
+    exit; // <-- What you want. Prevents further code from being executed, works as a security measure.
+}
 
     // include the config file 
     require "../config.php";
@@ -58,19 +63,22 @@ session_start();
 
 <?php include "templates/header.php"; ?>
 
-        <h2>All Assignments</h2>
+        <h2 class="heading">All Assignments</h2>
 
-    </div>
 
         <!-- This is a loop, which will loop through each result in the array -->
         <?php foreach($result as $row) { ?>
 
-    <br> Assignment Name:
-    <?php echo $row['assignmentname']; ?><br> Class Name:
-    <?php echo $row['classname']; ?><br> Due Date:
-    <?php echo $row['duedate']; ?><br> Assignment Percentage:
+<div class="row">
+    <div class="col">
+    <strong>Assignment Name:</strong>
+    <?php echo $row['assignmentname']; ?><br><strong> Class Name:</strong>
+    <?php echo $row['classname']; ?><br> <strong>Due Date:</strong>
+    <?php echo $row['duedate']; ?><br> <strong>Assignment Percentage:</strong>
     <?php echo $row['assignmentpercentage']; ?><br>
 </p>
+        </div>
+        </div>
 
                 <?php // this willoutput all the data from the array
             //echo '<pre>'; var_dump($row); ?>
@@ -79,7 +87,4 @@ session_start();
 
     </div>
 
-
-
-</div>
 <?php include "templates/footer.php"; ?>

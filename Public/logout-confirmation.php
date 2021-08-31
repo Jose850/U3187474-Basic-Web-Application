@@ -10,7 +10,7 @@ require_once "../config.php";
     exit;
 } */
 
-include "templates/header.php";
+include "templates/header-logout.php";
 ?>
 
 
@@ -20,7 +20,6 @@ include "templates/header.php";
   <p>We hope to see you again!</p>
   <p>
         <a href="login.php" class="btn btn-dark">Login</a>
-        <a href="reset-password.php" class="btn btn-dark">Reset Your Password</a>
         <a href="register.php" class="btn btn-dark">Create a new account</a>
     </p>
 </div>

@@ -4,18 +4,14 @@
 session_start();
  
 // Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
-    exit;
-}
-include "templates/header.php";
+include "templates/header-logout.php";
 ?>
  
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome to the Assignment Tracker</title>
+    <title>Welcome to the Assignment Tracker App</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
         body{ font: 14px sans-serif; text-align: center; }
@@ -30,5 +26,6 @@ include "templates/header.php";
         <a href="reset-password.php" class="btn btn-dark">Reset Your Password</a>
         <a href="logout.php" class="btn btn-dark">Sign Out of Your Account</a>
     </p>
+</hr>
 </body>
 </html>

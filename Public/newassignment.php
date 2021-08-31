@@ -2,6 +2,11 @@
 session_start();
 // this code will only execute after the submit button is clicked
 if (isset($_POST['submit'])) {
+    if(!isset($_SESSION['user'])) // The exact conditional depends on your login-system implementation
+{
+    header('Location: login.php'); // Instructs the visitor's browser to redirect
+    exit; // <-- What you want. Prevents further code from being executed, works as a security measure.
+}
 // include the config file that we created before
 require "../config.php";
 // this is called a try/catch statement
@@ -57,6 +62,15 @@ echo $sql . "<br>" . $error->getMessage();
     <input class="form-control mr-sm-2" type="text" name="duedate" id="duedate" placeholder="Due Date">
     <label for="form-control mr-sm-2" for="assignmentpercentage">Assignment Percentage</label>
     <input class="form-control mr-sm-2"type="text" name="assignmentpercentage" id="assignmentpercentage"placeholder="Assignment Percentage"> 
+</div>
+</div> 
+            <div class="row">
+                <div class="col">
     <input class="btn btn-outline-success my-2 my-sm-0"type="submit" name="submit" value="Submit">
 </form>
+</div>
+</div>
 <?php include "templates/footer.php"; ?>
+
+
+</form>
