@@ -2,11 +2,6 @@
 session_start();
 // this code will only execute after the submit button is clicked
 if (isset($_POST['submit'])) {
-    if(!isset($_SESSION['user'])) // The exact conditional depends on your login-system implementation
-{
-    header('Location: login.php'); // Instructs the visitor's browser to redirect
-    exit; // <-- What you want. Prevents further code from being executed, works as a security measure.
-}
 // include the config file that we created before
 require "../config.php";
 // this is called a try/catch statement
@@ -51,26 +46,45 @@ echo $sql . "<br>" . $error->getMessage();
  } ?>
 
 <!--form to collect data for each artwork-->
-    <form class="form-inline" method="post">
-    <div class="row">
+<div class="row">
     <div class="col">
-    <label for="assignmentname">Assignment Name</label>
-    <input class="form-control mr-sm-2" type="text" name="assignmentname" id="assignmentname" placeholder="Assignment Name">
-    <label for="classname">Class Name</label>
-    <input class="form-control mr-sm-2" type="text" name="classname" id="classname" placeholder="Class Name">
-    <label for="duedate">Due Date</label>
-    <input class="form-control mr-sm-2" type="text" name="duedate" id="duedate" placeholder="Due Date">
-    <label for="form-control mr-sm-2" for="assignmentpercentage">Assignment Percentage</label>
-    <input class="form-control mr-sm-2"type="text" name="assignmentpercentage" id="assignmentpercentage"placeholder="Assignment Percentage"> 
+        <form class="form-inline" method="post">
+            <label for="assignmentname">Assignment Name</label>
+            <input class="form-control mr-sm-2" type="text" name="assignmentname" id="assignmentname" placeholder="Assignment Name">
+            <label for="classname">Class Name</label>
+            <input class="form-control mr-sm-2" type="text" name="classname" id="classname" placeholder="Class Name">
+            <label for="duedate">Due Date</label>
+            <input class="form-control mr-sm-2" type="date" name="duedate" id="duedate" placeholder="Due Date">
+            <label for="form-control mr-sm-2" for="assignmentpercentage">Assignment Percentage</label>
+            <input class="form-control mr-sm-2"type="text" name="assignmentpercentage" id="assignmentpercentage"placeholder="Assignment Percentage">
+        </div>
+    </div>
+    <label for="form-control mr-sm-2" for="assignmentpercentage">Level of Importance</label>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault1">
+            Low
+        </label>
+    </div>
 </div>
-</div> 
-            <div class="row">
-                <div class="col">
-    <input class="btn btn-outline-success my-2 my-sm-0"type="submit" name="submit" value="Submit">
+<div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Medium
+                </label>
+            </div>
+        </div>
+        <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    High
+                </label>
+            </div>
+        </div>
+<div class="row">
+    <div class="col">
+        <input class="btn btn-outline-success my-2 my-sm-0"type="submit" name="submit" value="Submit">
+</div>
+</div>
 </form>
-</div>
-</div>
 <?php include "templates/footer.php"; ?>
-
-
-</form>

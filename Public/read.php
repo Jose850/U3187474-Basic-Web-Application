@@ -1,11 +1,6 @@
 <?php 
 
 session_start();
-if(!isset($_SESSION['user'])) // The exact conditional depends on your login-system implementation
-{
-    header('Location: login.php'); // Instructs the visitor's browser to redirect
-    exit; // <-- What you want. Prevents further code from being executed, works as a security measure.
-}
 
     // include the config file 
     require "../config.php";
@@ -62,8 +57,9 @@ if(!isset($_SESSION['user'])) // The exact conditional depends on your login-sys
 ?>
 
 <?php include "templates/header.php"; ?>
+<title>All Your Assignments</title>
 
-        <h2 class="heading">All Assignments</h2>
+        <h2 class="heading">All Your Assignments</h2>
 
 
         <!-- This is a loop, which will loop through each result in the array -->
@@ -71,14 +67,24 @@ if(!isset($_SESSION['user'])) // The exact conditional depends on your login-sys
 
 <div class="row">
     <div class="col">
-    <strong>Assignment Name:</strong>
-    <?php echo $row['assignmentname']; ?><br><strong> Class Name:</strong>
-    <?php echo $row['classname']; ?><br> <strong>Due Date:</strong>
-    <?php echo $row['duedate']; ?><br> <strong>Assignment Percentage:</strong>
-    <?php echo $row['assignmentpercentage']; ?><br>
-</p>
-        </div>
-        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Assignment Name</th>
+                    <th scope="col">Class Name</th>
+                    <th scope="col">Due Date</th>
+                    <th scope="col">Assignment Percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+        <tr>
+        <th scope="col"><?php echo $row['assignmentname']; ?><br></th>
+        <th scope="col"><?php echo $row['classname']; ?><br></th>
+        <th scope="col"><?php echo $row['duedate']; ?><br></th>
+        <th scope="col"><?php echo $row['assignmentpercentage']; ?><br></th>
+    </tbody>
+</div>
+ </div>
 
                 <?php // this willoutput all the data from the array
             //echo '<pre>'; var_dump($row); ?>

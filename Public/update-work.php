@@ -1,6 +1,5 @@
 <?php 
 
-
     // include the config file that we created last week
     require "../config.php";
     require "common.php";
@@ -8,11 +7,6 @@
 
     // run when submit button is clicked
     if (isset($_POST['submit'])) {
-        if(!isset($_SESSION['user'])) // The exact conditional depends on your login-system implementation
-{
-    header('Location: login.php'); // Instructs the visitor's browser to redirect
-    exit; // <-- What you want. Prevents further code from being executed, works as a security measure.
-}
         try {
             $connection = new PDO($dsn, $username, $password, $options);  
             
@@ -111,8 +105,7 @@
 </div>
 <div class="row">
     <div class="col">
-        <label for="duedate'">Due Date:</label>
-        <input type="text" name="duedate" id="duedate" value="<?php echo escape($work['duedate']); ?>">
+        <input class="form-control mr-sm-2" type="date" name="duedate" id="duedate" value="<?php echo escape($work['duedate']); ?>">
     </div>
 </div>
 <div class= "row">
@@ -124,7 +117,7 @@
 <div class="row">
     <div class="col"
 ><form class="submit">
-    <input class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit" value="Save">
+<input class="btn btn-outline-success my-2 my-sm-0"type="submit" name="submit" value="Save">
 </form>
 </div> 
 </div>
