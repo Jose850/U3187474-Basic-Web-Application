@@ -92,13 +92,25 @@ session_start();
     </tbody>
 </div>
  </div>
+ 
 
 
                 <?php // this willoutput all the data from the array
             //echo '<pre>'; var_dump($row); ?>
+            
 
         <?php }; //close the foreach ?>
+        
 
     </div>
+
+<div class="row">
+        <div class="col">
+            <form class="submit">
+                <a class="btn btn-success"href='read.php?id=<?php echo $row['id']; ?>'>See More</a>
+            </form>
+</div>
+</div>
+
 
 <?php include "templates/footer.php"; ?>

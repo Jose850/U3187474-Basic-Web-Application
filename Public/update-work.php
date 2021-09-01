@@ -94,24 +94,24 @@
     <div class="row">
         <div class="col">
             <label for="assignmentname">Assignment Name:</label>
-            <input class="form-control mr-sm-2" type="text" name="assignmentname" id="assignmentname" value="<?php echo escape($work['assignmentname']); ?>">
+            <input class="form-control mr-sm-2" type="text" name="assignmentname" required id="assignmentname" value="<?php echo escape($work['assignmentname']); ?>">
         </div>
     </div>
     <div class="row">
         <div class="col">
             <label for="classname">Class Name:</label>
-            <input class="form-control mr-sm-2" type="text" name="classname" id="classname" value="<?php echo escape($work['classname']); ?>">
+            <input class="form-control mr-sm-2" type="text" name="classname" required id="classname" value="<?php echo escape($work['classname']); ?>">
         </div>
 </div>
 <div class="row">
     <div class="col">
-        <input class="form-control mr-sm-2" type="date" name="duedate" id="duedate" value="<?php echo escape($work['duedate']); ?>">
+        <input class="form-control mr-sm-2" type="date" name="duedate" required id="duedate" value="<?php echo escape($work['duedate']); ?>">
     </div>
 </div>
 <div class= "row">
     <div class="col">
         <label for="assignmentpercentage">Assignment Percentage</label>
-        <input class="form-control mr-sm-2" type="text" name="assignmentpercentage" id="assignmentpercentage" value="<?php echo escape($work['assignmentpercentage']); ?>">
+        <input class="form-control mr-sm-2" type="text" name="assignmentpercentage" required id="assignmentpercentage" value="<?php echo escape($work['assignmentpercentage']); ?>">
 </div>
 </div>
 <div class="row">

@@ -29,7 +29,7 @@ session_start();
             $statement->execute();
 
             // Success message
-            $success = "Work successfully deleted";
+            $success = "<h2>Work successfully deleted!</h2>";
 
         } catch(PDOException $error) {
             // if there is an error, tell us what it is
@@ -60,6 +60,9 @@ session_start();
 
 
 <h2>Delete an assignment</h2>
+<form method ="post" onsubmit="confirm('Do you really want to delete everything?')";>
+    <a class="btn btn-danger" onClick ="return confirm('Do you really want to delete everything?');" href='delete.php?id=<?php echo $row['id']; ?>'>Delete All </a>
+
 
 <?php if (isset($success)){
         echo $success;

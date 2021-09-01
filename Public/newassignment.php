@@ -50,13 +50,13 @@ echo $sql . "<br>" . $error->getMessage();
     <div class="col">
         <form class="form-inline" method="post">
             <label for="assignmentname">Assignment Name</label>
-            <input class="form-control mr-sm-2" type="text" name="assignmentname" id="assignmentname" placeholder="Assignment Name">
+            <input class="form-control mr-sm-2" type="text" required name="assignmentname" id="assignmentname" placeholder="Assignment Name">
             <label for="classname">Class Name</label>
-            <input class="form-control mr-sm-2" type="text" name="classname" id="classname" placeholder="Class Name">
+            <input class="form-control mr-sm-2" type="text" required name="classname" id="classname" placeholder="Class Name">
             <label for="duedate">Due Date</label>
-            <input class="form-control mr-sm-2" type="date" name="duedate" id="duedate" placeholder="Due Date">
+            <input class="form-control mr-sm-2" type="date" required name="duedate" id="duedate">
             <label for="form-control mr-sm-2" for="assignmentpercentage">Assignment Percentage</label>
-            <input class="form-control mr-sm-2"type="text" name="assignmentpercentage" id="assignmentpercentage"placeholder="Assignment Percentage">
+            <input class="form-control mr-sm-2"type="text" required name="assignmentpercentage" id="assignmentpercentage"placeholder="Assignment Percentage">
         </div>
     </div>
     <label for="form-control mr-sm-2" for="assignmentpercentage">Level of Importance</label>
