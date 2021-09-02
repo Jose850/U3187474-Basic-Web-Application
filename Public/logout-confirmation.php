@@ -3,17 +3,11 @@
 session_start();
 
 require_once "../config.php";
- 
-// Check if the user is already logged in, if yes then redirect him to welcome page
-/* if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: welcome.php");
-    exit;
-} */
-
+require_once "templates/check.php";
 include "templates/header-logout.php";
 ?>
 
-
+<title>Successfully Logged Out</title>
 <div class="jumbotron text-center">
   <h1 class="display-3">You have successfully logged out!</h1>
   <hr>

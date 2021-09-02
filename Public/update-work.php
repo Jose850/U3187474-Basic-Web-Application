@@ -1,9 +1,10 @@
 <?php 
+session_start();
 
-    // include the config file that we created last week
-    require "../config.php";
-    require "common.php";
-
+    // include the config, common and check file. Only require it once
+    require_once "../config.php";
+    require_once "common.php";
+    require_once "templates/check.php";
 
     // run when submit button is clicked
     if (isset($_POST['submit'])) {

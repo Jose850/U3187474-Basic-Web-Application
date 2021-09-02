@@ -1,7 +1,12 @@
 <?php
-// Include config file
+session_start();
+
+// include the config, common and check file. Only require it once
 require_once "../config.php";
- 
+require_once "common.php";
+require_once "templates/check.php";
+
+
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
@@ -127,7 +132,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
             <p>Already have an account? <a href="login.php">Login here</a>.</p>
-            <p>Want to reset your password? <a href="reset-password.php">Password reset here</a>.</p>
         </form>
     </div>    
 </body>

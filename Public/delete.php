@@ -3,8 +3,9 @@
 session_start();
 
     // include the config file 
-    require "../config.php";
-    require "common.php";
+    require_once "../config.php";
+    require_once "common.php";
+    require_once "templates/check.php";
 
     // This code will only run if the delete button is clicked
     if (isset($_GET["id"])) {
@@ -18,6 +19,7 @@ session_start();
             
             // Create the SQL 
             $sql = "DELETE FROM assignmenttracker WHERE id = :id";
+            "DELETE  FROM assignmenttracker WHERE id = :id";
 
             // Prepare the SQL
             $statement = $connection->prepare($sql);
@@ -57,9 +59,10 @@ session_start();
 ?>
 
 <?php include "templates/header.php"; ?>
+<title>Delete an Assignment</title>
 
 
-<h2>Delete an assignment</h2>
+<h2>Delete an Assignment</h2>
 <form method ="post" onsubmit="confirm('Do you really want to delete everything?')";>
     <a class="btn btn-danger" onClick ="return confirm('Do you really want to delete everything?');" href='delete.php?id=<?php echo $row['id']; ?>'>Delete All </a>
 

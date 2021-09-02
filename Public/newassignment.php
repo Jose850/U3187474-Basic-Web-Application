@@ -1,9 +1,13 @@
 <?php
 session_start();
+
+// include the config file that we created before
+require_once "../config.php";
+require_once "common.php";
+require_once "templates/check.php";
 // this code will only execute after the submit button is clicked
 if (isset($_POST['submit'])) {
-// include the config file that we created before
-require "../config.php";
+
 // this is called a try/catch statement
 try {
 // FIRST: Connect to the database
@@ -39,7 +43,8 @@ echo $sql . "<br>" . $error->getMessage();
 }
 ?>
 <?php include "templates/header.php"; ?>
-<h2>Add a new assignment</h2>
+<title>Add a New Assignment</title>
+<h2>Add a New Assignment</h2>
 
 <?php if (isset($_POST['submit']) && $statement) { 
     echo "<h2>Work successfully added!</h2";
@@ -62,7 +67,7 @@ echo $sql . "<br>" . $error->getMessage();
 </div>
 <div class="row">
     <div class="col">
-        <input class="btn btn-outline-success my-2 my-sm-0"type="submit" name="submit" value="Submit">
+        <input class="btn btn-danger"type="submit" name="submit" value="Submit">
 </div>
 </div>
 </form>

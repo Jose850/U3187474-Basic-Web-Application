@@ -23,4 +23,5 @@
     <a class="nav-item" href="logout.php"onClick ="return confirm('Are you sure you want to logout?');" href='logout.php?id= <?php echo $row['id']; ?>'>Logout</a></a>
   </div>
 </div>
+</header>
 

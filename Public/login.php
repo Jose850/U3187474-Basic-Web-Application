@@ -88,50 +88,43 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
  
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
-    </style>
-</head>
-<body>
-    <div class="wrapper">
-        <h2 class= "mb-3 font-weight-normal">Login</h2>
-        <p>Please fill in your credentials to login.</p>
-
-        <?php 
-        if(!empty($login_err)){
-            echo '<div class="alert alert-danger">' . $login_err . '</div>';
-        }        
-        ?>
-
-        <form class =form-signin action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group">
-                <label>Username</label>
-                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                <span class="invalid-feedback"><?php echo $username_err; ?></span>
-            </div>    
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-                <span class="invalid-feedback"><?php echo $password_err; ?></span>
-            </div>
-            <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-            <div class="form-group">
-                <input class="btn btn-lg btn-primary btn-block" type="submit" class="btn btn-primary" value="Login">
-            </div>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
-            <p>Want to reset your password? <a href="reset-password.php">Password reset here</a>.</p>
-        </form>
-    </div>
-</body>
-</html>
+ <?php include "templates/header.php"; ?>
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <title>Login</title>
+ </head>
+ <body>
+ <div class="row">
+     <div class="row-fluid">
+           <div class="form-group col-md-6">
+         <h2 class="heading">Login</h2>
+         <p>Please fill in your credentials to login.</p>
+         <?php 
+         if(!empty($login_err)){
+             echo '<div class="alert alert-danger">' . $login_err . '</div>';
+         }        
+         ?>
+         <form class="form-inline"action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                 <label>Username</label>
+                 <input type="text" required name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                 <label>Password</label>
+                 <input type="password" required name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
+     </form>
+     </div>
+     </div>
+     </div>
+             <div class="form-group">
+                 <input class="btn btn-lg btn-primary btn-block" type="submit" class="btn btn-primary" value="Login">
+             </div>
+             <p>Don't have an account?<a class="signup" href="register.php"> Sign up now!</a></p>
+         
+ </body>
+ </html>
+ <?php include "templates/footer.php"; ?>
+ 
+ 

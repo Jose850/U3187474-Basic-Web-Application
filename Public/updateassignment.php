@@ -1,9 +1,11 @@
 <?php 
-
-    session_start();
+session_start();
 	
-    // include the config file that we created before
-    require "../config.php"; 
+    // include the config, common and check file. Only require it once
+    require_once "../config.php";
+    require_once "common.php";
+    require_once "templates/check.php";
+
     
     // this is called a try/catch statement 
 	try {
