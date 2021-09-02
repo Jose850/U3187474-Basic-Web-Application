@@ -13,7 +13,7 @@
 <body> 
     <header>
   <div class="topnav">
-  <a class="navbar-brand" href="index.php">Assignment Due Date Tracker</a>
+  <a class="navbar-brand">Assignment Due Date Tracker</a>
   </div>
 </header>
 

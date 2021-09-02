@@ -2,12 +2,7 @@
 // Initialize the session
 session_start();
  
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: welcome.php");
-    exit;
-}
- 
+
 // Include config file
 require_once "../config.php";
  
@@ -63,8 +58,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;                            
                             
-                            // Redirect user to welcome page
-                            header("location: welcome.php");
+                            // Redirect user to home page
+                            header("location: index.php");
                         } else{
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid username or password.";
@@ -96,35 +91,45 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      <meta charset="UTF-8">
      <title>Login</title>
  </head>
+    <!-- Body -->
  <body>
- <div class="row">
-     <div class="row-fluid">
-           <div class="form-group col-md-6">
-         <h2 class="heading">Login</h2>
-         <p>Please fill in your credentials to login.</p>
-         <?php 
-         if(!empty($login_err)){
-             echo '<div class="alert alert-danger">' . $login_err . '</div>';
-         }        
-         ?>
-         <form class="form-inline"action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                 <label>Username</label>
-                 <input type="text" required name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
-                 <label>Password</label>
-                 <input type="password" required name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
-     </form>
-     </div>
-     </div>
-     </div>
-             <div class="form-group">
-                 <input class="btn btn-lg btn-primary btn-block" type="submit" class="btn btn-primary" value="Login">
-             </div>
-             <p>Don't have an account?<a class="signup" href="register.php"> Sign up now!</a></p>
-         
- </body>
- </html>
+     <div class="row">
+         <div class="row-fluid">
+             <div class="form-group col-md-6">
+                    <!-- Login Heading -->
+                 <h2 class="heading">Login</h2>
+                 <p>Please fill in your credentials to login.</p>
+                 <!-- PHP - if this button is  -->
+        <?php 
+        if(!empty($login_err)){
+            echo '<div class="alert alert-danger">' . $login_err . '</div>';
+        }        
+        ?>
+        <!-- Login Form  -->
+        <form class="form-inline action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Username"  class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+                <span class="invalid-feedback"><?php echo $username_err; ?></span>
+            </div>    
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Password"class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+                <span class="invalid-feedback"><?php echo $password_err; ?></span>
+            </div>
+    </div>
+    </div>
+    </div>
+
+           <!-- Submit Button -->
+           <div class="row">
+                   <div class="form-group">
+                       <input class="btn btn-lg btn-primary btn-block" type="submit" class="btn btn-primary" value="Login">
+    </form>
+                    </div>
+                    <p>Don't have an account?<a class="signup" href="register.php"> Sign up now!</a></p>
+            </div>
+        </div>
+    </body>
+    </html>
  <?php include "templates/footer.php"; ?>
- 
- 

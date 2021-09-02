@@ -4,7 +4,6 @@ session_start();
 // include the config, common and check file. Only require it once
 require_once "../config.php";
 require_once "common.php";
-require_once "templates/check.php";
 
 
 // Define variables and initialize with empty values
@@ -48,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["password"]))){
         $password_err = "Please enter a password.";     
     } elseif(strlen(trim($_POST["password"])) < 6){
-        $password_err = "Password must have atleast 6 characters.";
+        $password_err = "Password must have at least 6 characters.";
     } else{
         $password = trim($_POST["password"]);
     }
@@ -95,44 +94,47 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     unset($pdo_connection);
 }
 ?>
- 
+ <?php include "templates/header-logout.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
-    </style>
 </head>
 <body>
-    <div class="wrapper">
-        <h2>Sign Up</h2>
-        <p>Please fill this form to create an account.</p>
+<div class="row">
+         <div class="row-fluid">
+             <div class="form-group col-md-6">
+
+                    <!-- Login Heading -->
+                 <h2 class="heading">Sign Up</h2>
+                 <p>Please fill this form to create an account.</p>
+
+                 <!-- Sign Up Form -->
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Username</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-                <span class="help-block"><?php echo $username_err; ?></span>
+                <input type="text" required name="username" placeholder="Username" class="form-control" value="<?php echo $username; ?>">
             </div>    
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Password</label>
-                <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
-                <span class="help-block"><?php echo $password_err; ?></span>
+                <input type="password" required name="password" placeholder="Password" class="form-control" value="<?php echo $password; ?>">
             </div>
             <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
                 <label>Confirm Password</label>
-                <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
-                <span class="help-block"><?php echo $confirm_password_err; ?></span>
+                <input type="password" required name="confirm_password" placeholder="Confirm Password" class="form-control" value="<?php echo $confirm_password; ?>">
             </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Submit">
-                <input type="reset" class="btn btn-default" value="Reset">
-            </div>
-            <p>Already have an account? <a href="login.php">Login here</a>.</p>
+
+            <!-- Submit Button -->
+           <div class="row">
+                   <div class="form-group">
+                   <input type="submit" class="btn btn-success" value="Submit">
+                <a class="btn btn-danger" href="index.php">Cancel</a>
+    </form>
+    </div>
+            <p>Don't have an account? <a class="signup" href="login.php">Login here</a>.</p>
         </form>
     </div>    
 </body>
 </html>
+<?php include "templates/footer.php"; ?>

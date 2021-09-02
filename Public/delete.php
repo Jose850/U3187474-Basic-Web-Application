@@ -19,7 +19,6 @@ session_start();
             
             // Create the SQL 
             $sql = "DELETE FROM assignmenttracker WHERE id = :id";
-            "DELETE  FROM assignmenttracker WHERE id = :id";
 
             // Prepare the SQL
             $statement = $connection->prepare($sql);
@@ -64,7 +63,6 @@ session_start();
 
 <h2>Delete an Assignment</h2>
 <form method ="post" onsubmit="confirm('Do you really want to delete everything?')";>
-    <a class="btn btn-danger" onClick ="return confirm('Do you really want to delete everything?');" href='delete.php?id=<?php echo $row['id']; ?>'>Delete All </a>
 
 
 <?php if (isset($success)){
