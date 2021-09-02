@@ -59,28 +59,7 @@ echo $sql . "<br>" . $error->getMessage();
             <input class="form-control mr-sm-2"type="text" required name="assignmentpercentage" id="assignmentpercentage"placeholder="Assignment Percentage">
         </div>
     </div>
-    <label for="form-control mr-sm-2" for="assignmentpercentage">Level of Importance</label>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        <label class="form-check-label" for="flexRadioDefault1">
-            Low
-        </label>
-    </div>
 </div>
-<div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Medium
-                </label>
-            </div>
-        </div>
-        <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    High
-                </label>
-            </div>
-        </div>
 <div class="row">
     <div class="col">
         <input class="btn btn-outline-success my-2 my-sm-0"type="submit" name="submit" value="Submit">
