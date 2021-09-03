@@ -79,18 +79,23 @@ session_start();
 
 ?>
 
-<?php include "templates/header.php"; ?>
-
-<?php if (isset($_POST['submit']) && $statement) : ?>
-	<h2>Work successfully updated!</h2>
-<?php endif; ?>
-
-<h2 class="heading">Edit a work</h2>
-
+ <!-- Include the header -->
+ <?php include "templates/header.php"; ?>
+ <!DOCTYPE HTML>
+ <html>
+    <head>
+    <meta charset="utf-8" />
+    <title>Update your Assignments</title>
+</head>
+<body>
+    <!-- Heading -->
+<h2 class="heading">Edit Your Assignments</h2>
+  <!-- Php statement- submit -->
+  <?php if (isset($_POST['submit']) && $statement) : ?>
+    <h2>Work successfully updated!</h2>
+  <?php endif; ?>
+ <!-- Form-->
 <form class="form-inline"method="post">
-
-    
-    <!-- <label for="id">ID</label> -->
     <input readonly type="hidden" name="id" id="id" value="<?php echo escape($work['id']); ?>" >
     <div class="row">
         <div class="col">
@@ -115,6 +120,7 @@ session_start();
         <input class="form-control mr-sm-2" type="text" name="assignmentpercentage" required id="assignmentpercentage" value="<?php echo escape($work['assignmentpercentage']); ?>">
 </div>
 </div>
+</form>
 <div class="row">
     <div class="col"
 ><form class="submit">
@@ -122,6 +128,7 @@ session_start();
 </form>
 </div> 
 </div>
+  </body>
 
 
 <?php include "templates/footer.php"; ?>

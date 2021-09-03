@@ -40,7 +40,6 @@ session_start();
         </div>
       </div>
     </div>
-
     <h2 class="heading">Your Most Recent Tasks</h2>
     <div class="row">
         <div class="col">
@@ -71,7 +70,7 @@ session_start();
     <div class="row">
         <div class="col">
             <form class="submit">
-                <a class="btn btn-success"href='read.php?id=<?php echo $row['id']; ?>'>See More</a>
+            <a class="btn btn-success"href="read.php">See More</a>
             </form>
           </div>
         </div>

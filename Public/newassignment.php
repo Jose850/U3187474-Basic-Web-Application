@@ -50,7 +50,7 @@ echo $sql . "<br>" . $error->getMessage();
     echo "<h2>Work successfully added!</h2";
  } ?>
 
-<!--form to collect data for each artwork-->
+<!--form to collect data for each assignment-->
 <div class="row">
     <div class="col">
         <form class="form-inline" method="post">
