@@ -13,8 +13,7 @@ footer{
 }
 /* h2 */
 h2{
-  padding: 15px;
-  
+  padding: 15px;  
 }
 /* Text Heading */
 .heading{
@@ -24,181 +23,48 @@ h2{
 /* Wrapper */
 .wrapper{
   width: 360px !important; 
-  padding: 20px !important; 
-  
+  padding: 20px !important;  
   }
-
 /* Login Form */
   .form-group {
     padding-bottom: 10px !important;
 }
-  a.signup {
+/* Signup Link Colour*/
+a.signup {
     color: #0d6efd !important;
 }
-
-.submit{
-  padding-top:20px;
-  padding-bottom: 15px;
-}
-
-a.navbar-brand {
-  font-weight: bold;
-}
-.box-shadow {
-    box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 5%);
-}
-.border-bottom {
-    border-bottom: 1px solid #e5e5e5;
-}
-.p-3 {
-    padding: 1rem!important;
-}
-.mb-3, .my-3 {
-    margin-bottom: 1rem!important;
-}
-.align-items-center {
-    -webkit-box-align: center!important;
-    -ms-flex-align: center!important;
-    align-items: center!important;
-}
-.flex-column {
-    -webkit-box-orient: vertical!important;
-    -webkit-box-direction: normal!important;
-    -ms-flex-direction: column!important;
-    flex-direction: column!important;
-}
-.d-flex {
-    display: -webkit-box!important;
-    display: -ms-flexbox!important;
-    display: flex!important;
-}
-.border-bottom {
-    border-bottom: 1px solid #dee2e6!important;
-}
-.bg-white {
-    background-color: #fff!important;
-}
-*, ::after, ::before {
-    box-sizing: border-box;
-}
-/* Navbar color */
-h1.display-1 {
-  padding-left: 15px;
-}
-
-/* unvisited link */
-a:link {
-    color:white;
-    text-decoration: none;
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
   }
-  
-  /* visited link */
-  a:visited {
-    color:white;
-    text-decoration: none;
-  }
-  
-  /* mouse over link */
-  a:hover {
-    color:white;
-    text-decoration: none;
-  }
-  
-  /* selected link */
-  a:active {
-    color:white;
-    text-decoration: none;
-  }
-  .display-1 {
-    font-weight: 500 !important;
-    font-size: 1.625rem !important;
-
-}
-/* Delete Button */
-.btn-danger {
-    color: white !important;
-    background-color: #dc3545;
-    border-color: #dc3545;
-}
-
-label {
-    margin: 5px;
-    display: block;
-}
-
-.mb-4, .my-4 {
-  margin-bottom: 1.5rem!important;
-}
-.bg-dark {
-  background-color: #343a40!important;
-}
-
-.jumbotron {
-  padding: 2rem 1rem;
-  margin-bottom: 2rem;
-  background-color: #e9ecef;
-  border-radius: .3rem;
-}
-.navbar {
-  position: relative;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: .5rem 1rem;
-}
-.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
-  color: #fff;
-}
-
-
-.form-signin {
-    width: 100%;
-    max-width: 330px;
-    padding: 15px;
-    margin: 0 auto;
-}
-*, ::after, ::before {
-  box-sizing: border-box;
-}
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #333;
   overflow: hidden;
 }
-
 /* Style the links inside the navigation bar */
 .topnav a {
-float: left;
-color: #f2f2f2;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-background-color: #ddd;
-color: black;
-}
-
-
-main {
-    display: block;
-    background-color: grey;
-    flex: 1 0 auto;
-}
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  }
+/* Jumbotron */
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: .3rem;
+  }
+/* Row Padding*/
 .row{
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: calc(var(--bs-gutter-y) * -1);
-  margin-left: calc(var(--bs-gutter-x) * -.10);
     padding: 10px;
+}
+/* Label margin*/
+label {
+  margin: 5px;
+  display: block;
 }
