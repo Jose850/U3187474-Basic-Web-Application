@@ -3,7 +3,7 @@
 session_start();
 
  
-// Include config file
+// include the config, common and check file. Only require it once
 require_once "../config.php";
 require_once "common.php";
 require_once "templates/check.php";
@@ -66,6 +66,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
+<!-- Include Header -->
 <?php include "templates/header.php"; ?>
  
 <!DOCTYPE html>
@@ -78,6 +79,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <div class="row">
     <div class="row-fluid">
           <div class="form-group col-md-6">
+               <!-- Reset Password Form -->
         <h2 class="heading">Reset Password</h2>
         <p>Please fill out this form to reset your password.</p>
         <form class="form-inline" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
@@ -94,6 +96,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </div>
 </div>
 </div>
+ <!-- Submit Button -->
             <div class="row">
                 <div class="col">
                     <input class="btn btn-success" type="submit" value="Submit">
@@ -104,6 +107,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </form>
     </div>   
 </div> 
-</body>
-</html>
+ <!-- Footer  -->
 <?php include "templates/footer.php"; ?>

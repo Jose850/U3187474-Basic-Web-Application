@@ -3,8 +3,9 @@
 session_start();
  
 
-// Include config file
+// Include config and common file
 require_once "../config.php";
+require_once "common.php";
  
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -82,7 +83,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
- 
+     <!-- Header Template-->
  <?php include "templates/header.php"; ?>
  
  <!DOCTYPE html>
@@ -130,6 +131,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <p>Don't have an account?<a class="signup" href="register.php"> Sign up now!</a></p>
             </div>
         </div>
-    </body>
-    </html>
+        <!-- Footer Template -->
  <?php include "templates/footer.php"; ?>

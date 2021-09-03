@@ -2,7 +2,7 @@
 
 session_start();
 
-    // include the config file 
+    // include the config, common and check file. Only require it once
     require_once "../config.php";
     require_once "common.php";
     require_once "templates/check.php";
@@ -24,7 +24,7 @@ session_start();
     }
 
 ?>
-
+<!-- Header Template -->
 <?php include "templates/header.php"; ?>
 <!DOCTYPE HTML>
 <html>
@@ -69,11 +69,11 @@ session_start();
     </div>
     <div class="row">
         <div class="col">
+          <!-- Submit Button -->
             <form class="submit">
             <a class="btn btn-success"href="read.php">See More</a>
             </form>
           </div>
         </div>
-      </body>
-      </html>
-      <?php include "templates/footer.php"; ?>
+      <!-- Footer Template -->
+            <?php include "templates/footer.php"; ?>

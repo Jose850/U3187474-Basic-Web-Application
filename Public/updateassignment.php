@@ -78,7 +78,5 @@ session_start();
     </table>
 </div>
         </div>
-      </body>
-      </html>
  <!-- Footer  -->
 <?php include "templates/footer.php"; ?>

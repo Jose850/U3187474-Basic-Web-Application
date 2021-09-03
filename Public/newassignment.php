@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// include the config file that we created before
+    // include the config, common and check file. Only require it once
 require_once "../config.php";
 require_once "common.php";
 require_once "templates/check.php";
@@ -78,7 +78,5 @@ echo $sql . "<br>" . $error->getMessage();
 </div>
 </div>
 </form>
-</body>
-</html>
   <!-- Footer Template -->
 <?php include "templates/footer.php"; ?>

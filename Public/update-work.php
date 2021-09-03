@@ -9,6 +9,7 @@ session_start();
     // run when submit button is clicked
     if (isset($_POST['submit'])) {
         try {
+            
             $connection = new PDO($dsn, $username, $password, $options);  
             
             //grab elements from form and set as varaible
@@ -76,6 +77,7 @@ session_start();
         //exit;
     };
 
+
 ?>
 
  <!-- Include the header -->
@@ -90,6 +92,7 @@ session_start();
     <!-- Heading -->
     <h2 class="heading">Edit Your Assignments</h2>
     <!-- Php statement- submit -->
+    
     <?php if (isset($_POST['submit']) && $statement) : ?>
         <h2>Work successfully updated!</h2>
         <?php endif; ?>
@@ -121,7 +124,7 @@ session_start();
 </div>
 </div>
 </form>
- <!-- Submit Button -->
+ <!-- Footer  -->
 <div class="row">
     <div class="col">
         <form class="submit">
@@ -130,7 +133,6 @@ session_start();
         </form>
 </div> 
 </div>
-  </body>
    <!-- Footer  -->
 <?php include "templates/footer.php"; ?>
 

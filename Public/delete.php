@@ -1,7 +1,7 @@
 <?php 
    session_start();
    
-       // include the config file 
+       // include the config, common and check templates file
        require_once "../config.php";
        require_once "common.php";
        require_once "templates/check.php";
@@ -55,7 +55,7 @@
        }
    
    ?>
-<!-- This is a loop, which will loop through each result in the array -->
+<!-- Header Template -->
 <?php include "templates/header.php"; ?>
 <!DOCTYPE HTML>
 <html>
@@ -107,7 +107,5 @@
          </table>
       </div>
       </div>
-   </body>
-</html>
 <!-- Footer Template-->
 <?php include "templates/footer.php"; ?>

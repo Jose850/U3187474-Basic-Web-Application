@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// include the config, common and check file. Only require it once
+// include the config and common. Only require it once
 require_once "../config.php";
 require_once "common.php";
 
@@ -136,7 +136,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <p>Don't have an account? <a class="signup" href="login.php">Login here</a>.</p>
         </form>
     </div>    
-</body>
-</html>
   <!-- Footer Template -->
 <?php include "templates/footer.php"; ?>
