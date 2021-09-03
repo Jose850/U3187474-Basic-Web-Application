@@ -96,7 +96,9 @@ session_start();
 
         <?php }; //close the foreach ?>
     </table>
-    </body>
-</html>
+    </div>
+</div>
+      </body>
+      </html>
 
 <?php include "templates/footer.php"; ?>

@@ -129,7 +129,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
            <div class="row">
                    <div class="form-group">
                    <input type="submit" class="btn btn-success" value="Submit">
-                <a class="btn btn-danger" href="index.php">Cancel</a>
+                   <a class="btn btn-danger" href="index.php">Cancel</a>
     </form>
     </div>
             <p>Don't have an account? <a class="signup" href="login.php">Login here</a>.</p>

@@ -76,27 +76,26 @@ session_start();
         //exit;
     };
 
-
 ?>
 
  <!-- Include the header -->
  <?php include "templates/header.php"; ?>
  <!DOCTYPE HTML>
  <html>
-    <head>
-    <meta charset="utf-8" />
-    <title>Update your Assignments</title>
-</head>
-<body>
+     <head>
+         <meta charset="utf-8" />
+         <title>Update your Assignments</title>
+    </head>
+    <body>
     <!-- Heading -->
-<h2 class="heading">Edit Your Assignments</h2>
-  <!-- Php statement- submit -->
-  <?php if (isset($_POST['submit']) && $statement) : ?>
-    <h2>Work successfully updated!</h2>
-  <?php endif; ?>
+    <h2 class="heading">Edit Your Assignments</h2>
+    <!-- Php statement- submit -->
+    <?php if (isset($_POST['submit']) && $statement) : ?>
+        <h2>Work successfully updated!</h2>
+        <?php endif; ?>
  <!-- Form-->
-<form class="form-inline"method="post">
-    <input readonly type="hidden" name="id" id="id" value="<?php echo escape($work['id']); ?>" >
+ <form class="form-inline"method="post">
+     <input readonly type="hidden" name="id" id="id" value="<?php echo escape($work['id']); ?>" >
     <div class="row">
         <div class="col">
             <label for="assignmentname">Assignment Name:</label>
@@ -111,6 +110,7 @@ session_start();
 </div>
 <div class="row">
     <div class="col">
+    <label for="classname">Date Due</label>
         <input class="form-control mr-sm-2" type="date" name="duedate" required id="duedate" value="<?php echo escape($work['duedate']); ?>">
     </div>
 </div>
@@ -122,13 +122,14 @@ session_start();
 </div>
 </form>
 <div class="row">
-    <div class="col"
-><form class="submit">
-<input class="btn btn-outline-success my-2 my-sm-0"type="submit" name="submit" value="Save">
-</form>
+    <div class="col">
+        <form class="submit">
+            <input class="btn btn-outline-success my-2 my-sm-0"type="submit" name="submit" value="Save">
+            <a class="btn btn-success" href="updateassignment.php">Go Back</a>
+        </form>
 </div> 
 </div>
   </body>
 
-
 <?php include "templates/footer.php"; ?>
+
