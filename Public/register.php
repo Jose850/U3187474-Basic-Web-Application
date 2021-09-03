@@ -94,6 +94,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     unset($pdo_connection);
 }
 ?>
+  <!-- Header Template -->
  <?php include "templates/header-logout.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -137,4 +138,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>    
 </body>
 </html>
+  <!-- Footer Template -->
 <?php include "templates/footer.php"; ?>

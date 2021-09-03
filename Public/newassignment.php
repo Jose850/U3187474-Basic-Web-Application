@@ -42,8 +42,14 @@ echo $sql . "<br>" . $error->getMessage();
 }
 }
 ?>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Add a New Assignment</title>
+</head>
+<body>
 <?php include "templates/header.php"; ?>
-<title>Add a New Assignment</title>
 <h2>Add a New Assignment</h2>
 
 <?php if (isset($_POST['submit']) && $statement) { 
@@ -65,10 +71,14 @@ echo $sql . "<br>" . $error->getMessage();
         </div>
     </div>
 </div>
+  <!-- Submit Button -->
 <div class="row">
     <div class="col">
         <input class="btn btn-danger"type="submit" name="submit" value="Submit">
 </div>
 </div>
 </form>
+</body>
+</html>
+  <!-- Footer Template -->
 <?php include "templates/footer.php"; ?>

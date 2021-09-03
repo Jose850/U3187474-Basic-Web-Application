@@ -121,6 +121,7 @@ session_start();
 </div>
 </div>
 </form>
+ <!-- Submit Button -->
 <div class="row">
     <div class="col">
         <form class="submit">
@@ -130,6 +131,6 @@ session_start();
 </div> 
 </div>
   </body>
-
+   <!-- Footer  -->
 <?php include "templates/footer.php"; ?>
 
